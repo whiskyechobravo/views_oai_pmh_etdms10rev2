@@ -1,0 +1,8 @@
+name = Views OAI-PMH ETD-MS 1.00 revision 2
+description = "A Views OAI-PMH extension to support the ETD-MS 1.00 revision 2 metadata format."
+
+package = Views
+core = 7.x
+
+dependencies[] = views_oai_pmh
+files[] = includes/formats/oai_etdms10rev2.inc

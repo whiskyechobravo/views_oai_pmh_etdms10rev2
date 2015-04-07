@@ -1,0 +1,30 @@
+<?php
+
+/**
+ * @file A Views OAI-PMH extension to support the ETD-MS 1.00 revision 2
+ * metadata format.
+ */
+
+/**
+ * Implements hook_views_oai_pmh_metadata_format_info().
+ *
+ * Returns the OAI-PMH metadata formats supported by this module.
+ */
+function views_oai_pmh_etdms10rev2_views_oai_pmh_metadata_format_info() {
+  return array('oai_etdms10rev2');
+}
+
+/**
+ * Implements hook_views_oai_pmh_metadata_format().
+ *
+ * Instanciates the metadata format object corresponding to the specified
+ * format id.
+ */
+function views_oai_pmh_etdms10rev2_views_oai_pmh_metadata_format($id) {
+  if (in_array($id, views_oai_pmh_etdms10rev2_views_oai_pmh_metadata_format_info())) {
+    $class_name = 'views_oai_pmh_etdms10rev2_format_' . $id;
+    if (class_exists($class_name)) {
+      return new $class_name;
+    }
+  }
+}
